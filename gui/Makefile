@@ -1,0 +1,22 @@
+.PHONY: setup dev build clean lint typecheck
+
+setup:
+	pnpm install
+
+dev:
+	@echo ""
+	@echo "🚀 Open http://localhost:3000"
+	@echo ""
+	pnpm dev
+
+build:
+	pnpm build
+
+lint:
+	pnpm lint
+
+typecheck:
+	pnpm typecheck
+
+clean:
+	rm -rf dist .next node_modules

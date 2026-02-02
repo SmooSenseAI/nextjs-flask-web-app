@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs:*)",
+      "Bash(pnpm install:*)",
+      "Bash(uv venv:*)",
+      "Bash(uv sync)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm build:*)",
+      "Bash(uv build:*)",
+      "Bash(uv run:*)"
+    ]
+  }
+}
