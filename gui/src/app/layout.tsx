@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
+import { SettingsDropdown } from "@/components/settings-dropdown";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="fixed top-4 right-4 z-50">
+            <SettingsDropdown />
+          </div>
+          {children}
+        </Providers>
       </body>
     </html>
   );

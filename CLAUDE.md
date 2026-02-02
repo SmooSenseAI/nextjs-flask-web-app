@@ -1,10 +1,10 @@
 # Next.js + Flask Web App Template
 
 ## Project Overview
-A minimal, production-grade template for building web applications with Next.js frontend and Flask backend. The frontend is compiled and bundled into the Flask Python package for unified deployment.
+A minimal, production-grade template for building web applications with Next.js frontend and Flask backend. The frontend is compiled and bundled into the Flask Python package so it can be released as a Python package, CLI tool, or deployed on web servers.
 
 ## Tech Stack
-- **Frontend**: Next.js 15, React 19, Redux Toolkit, Tailwind CSS v4
+- **Frontend**: Next.js 15, React 19, Redux Toolkit, Tailwind CSS v4, shadcn/ui
 - **Backend**: Flask 3.x, Python 3.10+
 - **Build**: pnpm (frontend), uv (Python), Make (orchestration)
 
@@ -68,6 +68,13 @@ webapp serve
 - Redux Toolkit with typed hooks
 - Feature-based slice organization in `gui/src/lib/features/`
 
+### UI Components (shadcn/ui)
+- Components in `gui/src/components/ui/`
+- Built on Radix UI primitives
+- Styled with Tailwind CSS
+- Theme colors defined in `gui/src/app/globals.css` using oklch format
+- Dark mode via `next-themes` with class-based switching
+
 ### CLI
 - Click-based CLI in `server/app/cli.py`
 - Entry point: `webapp` command
@@ -104,3 +111,8 @@ cd server && uv build      # Build package
 
 ### New CLI Command
 1. Add to `server/app/cli.py`
+
+### New UI Component
+1. Add component to `gui/src/components/ui/`
+2. Use Radix UI primitives + Tailwind CSS
+3. Export from component file

@@ -2,6 +2,7 @@
 
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
 import { increment, decrement, selectCount } from "@/lib/features/counterSlice";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const count = useAppSelector(selectCount);
@@ -14,18 +15,8 @@ export default function Home() {
       <div className="flex flex-col items-center gap-4 p-6 border rounded-lg bg-secondary">
         <p className="text-lg">Redux Counter: {count}</p>
         <div className="flex gap-2">
-          <button
-            onClick={() => dispatch(decrement())}
-            className="px-4 py-2 bg-primary text-primary-foreground rounded hover:opacity-90"
-          >
-            -
-          </button>
-          <button
-            onClick={() => dispatch(increment())}
-            className="px-4 py-2 bg-primary text-primary-foreground rounded hover:opacity-90"
-          >
-            +
-          </button>
+          <Button onClick={() => dispatch(decrement())}>-</Button>
+          <Button onClick={() => dispatch(increment())}>+</Button>
         </div>
       </div>
 
