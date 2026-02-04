@@ -1,4 +1,4 @@
-.PHONY: setup dev build clean lint typecheck
+.PHONY: setup dev build clean lint typecheck unittest test
 
 setup:
 	pnpm install
@@ -17,6 +17,11 @@ lint:
 
 typecheck:
 	pnpm typecheck
+
+unittest:
+	pnpm test
+
+test: typecheck lint unittest
 
 clean:
 	rm -rf dist .next node_modules

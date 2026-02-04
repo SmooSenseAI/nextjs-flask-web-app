@@ -8,7 +8,9 @@
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm build:*)",
       "Bash(uv build:*)",
-      "Bash(uv run:*)"
+      "Bash(uv run:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(make unittest:*)"
     ]
   }
 }
