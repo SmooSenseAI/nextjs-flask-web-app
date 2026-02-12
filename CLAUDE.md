@@ -1,7 +1,7 @@
-# Next.js + Flask Web App Template
+# ITrade
 
 ## Project Overview
-A minimal, production-grade template for building web applications with Next.js frontend and Flask backend. The frontend is compiled and bundled into the Flask Python package so it can be released as a Python package, CLI tool, or deployed on web servers.
+A trading wrapper for E*Trade built with Next.js frontend and Flask backend. The frontend is compiled and bundled into the Flask Python package so it can be released as a Python package, CLI tool, or deployed on web servers.
 
 ## Tech Stack
 - **Frontend**: Next.js 15, React 19, Redux Toolkit, Tailwind CSS v4, shadcn/ui
@@ -53,9 +53,9 @@ make build                 # Build frontend + bundle into Python package
 
 ### Run Production
 ```bash
-cd server && uv run webapp serve
+cd server && uv run itrade serve
 # or after pip install:
-webapp serve
+itrade serve
 ```
 
 ## Key Patterns
@@ -77,11 +77,11 @@ webapp serve
 
 ### CLI
 - Click-based CLI in `server/app/cli.py`
-- Entry point: `webapp` command
+- Entry point: `itrade` command
 
 ## Build Targets
 1. **Python Package**: `pip install .` or `uv build`
-2. **CLI Tool**: `webapp serve`, `webapp --version`
+2. **CLI Tool**: `itrade serve`, `itrade --version`
 3. **Web Deployable**: Static export bundled in package
 
 ## Common Commands

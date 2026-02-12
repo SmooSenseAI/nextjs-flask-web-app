@@ -19,9 +19,9 @@ def index():
         return send_from_directory(static_folder, "index.html")
     return """
     <html>
-    <head><title>Web App</title></head>
+    <head><title>ITrade</title></head>
     <body>
-        <h1>Web App Backend</h1>
+        <h1>ITrade Backend</h1>
         <p>Frontend not built yet. Run <code>make build</code> from the root directory.</p>
         <p>API available at <a href="/api/health">/api/health</a></p>
     </body>

@@ -1,7 +1,7 @@
 [project]
-name = "webapp"
+name = "itrade"
 version = "0.1.0"
-description = "Next.js + Flask Web Application"
+description = "ITrade - E*Trade Trading Wrapper"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-webapp = "app.cli:main"
+itrade = "app.cli:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]

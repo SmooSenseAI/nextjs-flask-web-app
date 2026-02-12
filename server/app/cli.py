@@ -11,11 +11,11 @@ from app import create_app
 @click.option("--version", is_flag=True, help="Show version and exit.")
 @click.pass_context
 def main(ctx: click.Context, version: bool) -> None:
-    """Web App - Next.js + Flask application."""
+    """ITrade - E*Trade Trading Wrapper."""
     if version:
         from importlib.metadata import version as get_version
 
-        click.echo(f"webapp {get_version('webapp')}")
+        click.echo(f"itrade {get_version('itrade')}")
         return
 
     if ctx.invoked_subcommand is None:

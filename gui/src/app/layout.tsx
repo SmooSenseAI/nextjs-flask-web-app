@@ -4,8 +4,8 @@ import { SettingsDropdown } from "@/components/settings-dropdown";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Web App",
-  description: "Next.js + Flask Web Application",
+  title: "ITrade",
+  description: "ITrade - E*Trade Trading Wrapper",
 };
 
 export default function RootLayout({
