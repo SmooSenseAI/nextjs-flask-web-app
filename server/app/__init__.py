@@ -4,6 +4,7 @@ import os
 from flask import Flask
 
 from app.handlers.api import api_bp
+from app.handlers.etrade import etrade_bp
 from app.handlers.pages import pages_bp
 
 
@@ -19,6 +20,7 @@ def create_app() -> Flask:
 
     # Register blueprints
     app.register_blueprint(api_bp, url_prefix="/api")
+    app.register_blueprint(etrade_bp, url_prefix="/api/etrade")
     app.register_blueprint(pages_bp, url_prefix="")
 
     return app

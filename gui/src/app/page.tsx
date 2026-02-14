@@ -1,29 +1,63 @@
 "use client";
 
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
-import { increment, decrement, selectCount } from "@/lib/features/counterSlice";
-import { Button } from "@/components/ui/button";
+import {
+  selectETradeStatus,
+  selectSessionId,
+  selectSelectedAccountKey,
+  selectPositions,
+  selectBalance,
+  selectLoading,
+  restoreSession,
+} from "@/lib/features/etradeSlice";
+import { ETradeConnect } from "@/components/etrade-connect";
+import { PositionsGrid } from "@/components/positions-grid";
 
 export default function Home() {
-  const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
+  const status = useAppSelector(selectETradeStatus);
+  const sessionId = useAppSelector(selectSessionId);
+  const accountKey = useAppSelector(selectSelectedAccountKey);
+  const positions = useAppSelector(selectPositions);
+  const balance = useAppSelector(selectBalance);
+  const loading = useAppSelector(selectLoading);
+
+  useEffect(() => {
+    dispatch(restoreSession());
+  }, [dispatch]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <h1 className="text-4xl font-bold mb-8">ITrade</h1>
+    <main className="flex flex-col min-h-screen p-6 gap-4">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold">ITrade</h1>
+      </div>
 
-      <div className="flex flex-col items-center gap-4 p-6 border rounded-lg bg-secondary">
-        <p className="text-lg">Redux Counter: {count}</p>
-        <div className="flex gap-2">
-          <Button onClick={() => dispatch(decrement())}>-</Button>
-          <Button onClick={() => dispatch(increment())}>+</Button>
+      {status === "restoring" ? (
+        <div className="flex-1 flex items-center justify-center">
+          <p className="text-muted-foreground">Restoring session...</p>
         </div>
-      </div>
-
-      <div className="mt-8 text-muted-foreground text-sm">
-        <p>Frontend: Next.js + Redux + Tailwind CSS</p>
-        <p>Backend: Flask</p>
-      </div>
+      ) : status !== "connected" ? (
+        <div className="flex-1 flex items-center justify-center">
+          <ETradeConnect />
+        </div>
+      ) : (
+        <div className="flex-1">
+          {loading ? (
+            <div className="flex items-center justify-center p-12">
+              <p className="text-muted-foreground">Loading positions...</p>
+            </div>
+          ) : positions.length === 0 ? (
+            <div className="flex items-center justify-center p-12">
+              <p className="text-muted-foreground">
+                No positions found in this account.
+              </p>
+            </div>
+          ) : (
+            <PositionsGrid positions={positions} balance={balance} sessionId={sessionId ?? ""} accountKey={accountKey ?? ""} />
+          )}
+        </div>
+      )}
     </main>
   );
 }

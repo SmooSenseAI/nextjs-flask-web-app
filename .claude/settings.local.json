@@ -10,7 +10,28 @@
       "Bash(uv build:*)",
       "Bash(uv run:*)",
       "Bash(pnpm lint:*)",
-      "Bash(make unittest:*)"
+      "Bash(make unittest:*)",
+      "WebSearch",
+      "WebFetch(domain:apisb.etrade.com)",
+      "WebFetch(domain:developer.etrade.com)",
+      "WebFetch(domain:www.ag-grid.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:blog.ag-grid.com)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:seansoper.com)",
+      "Bash(ls:*)",
+      "WebFetch(domain:pyetrade.readthedocs.io)",
+      "WebFetch(domain:pypi.org)",
+      "Bash(uv sync:*)",
+      "Bash(pnpm add:*)",
+      "Bash(make lint:*)",
+      "Bash(uv run python:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm dlx shadcn@latest add:*)",
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(pip show:*)"
     ]
   }
 }
